@@ -1,4 +1,8 @@
-# EntityFrameworkCore.MemoryJoin
+# EF.MemoryJoin.Core
+This project is reference from [EntityFrameworkCore.MemoryJoin](https://www.nuget.org/packages/EntityFrameworkCore.MemoryJoin)
+
+This Project now support ```dotnet 8```.
+
 Extension for EntityFramework for joins to in-memory data. Both Entity Framework 6 and Entity Framework Core are supported!
 Used SQL standard syntax. 
 
@@ -8,11 +12,11 @@ Tested with: MSSQL, PostgreSQL, and SQLite. (others should also work as standard
 
 1. Internally MemoryJoin uses intermediate class for making queries. So you can either use your own or basically use built-in one. Like this:
 
-    ```protected DbSet<EntityFramework.MemoryJoin.QueryModelClass> QueryData { get; set; }```
+    ```protected DbSet<EF.MemoryJoin.QueryModelClass> QueryData { get; set; }```
     
     Or like this for EF Core
     
-    ```protected DbSet<EntityFrameworkCore.MemoryJoin.QueryModelClass> QueryData { get; set; }```
+    ```protected DbSet<EF.MemoryJoin.QueryModelClass> QueryData { get; set; }```
     
   Please note this DbSet is protected, so it can't be used by anybody, only MemoryJoin will access it.
   Another note: table for QueryModelClass is NOT required. It is used for internal mapping only. So if you use migrations - basically use -IgnoreChanges flag.
@@ -21,11 +25,11 @@ Tested with: MSSQL, PostgreSQL, and SQLite. (others should also work as standard
   
 2. After DbSet is defined you can write as follows:
   
-    ```using EntityFramework.MemoryJoin```
+    ```using EF.MemoryJoin```
     
     For EF Core:
     
-    ```using EntityFrameworkCore.MemoryJoin```
+    ```using EF.MemoryJoin.Core```
     
     
   Then
